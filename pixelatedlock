@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# take screenshot
+import -window root /tmp/screenshot.png
+
+# pixelate it
+convert /tmp/screenshot.png -scale 10% -scale 1000% /tmp/screenshotpixelated.png
+rm /tmp/screenshot.png
+
+# lock the screen
+i3lock -i /tmp/screenshotpixelated.png
+
+exit 0
+
